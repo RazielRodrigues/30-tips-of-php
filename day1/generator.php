@@ -7,11 +7,10 @@
  * os criadores do PHP decidiram implementar os Generator,
  * generators sao basicamente funções que retornam o resultado
  * de algo iteravel sem precisar salvar o resultado da iteração
- * em uma variavel, uma vez que o generator logo após retornar
- * iterar já retorna o resultado ou seja não sendo mais
+ * em uma variavel, uma vez que o generator logo após
+ * iterar já colhe o resultado ou seja não sendo mais
  * necessario fazer o famoso $array[] = $value;
  */
-
 
 echo '<h1> Generators: </h1> <hr>';
 
@@ -94,3 +93,32 @@ var_dump(is_array($x->getReturn()));
 echo '<hr>';
 
 echo '<h1> Exemplo benchmark: </h1> <hr>';
+
+
+function forEachOnly()
+{
+    $numeros = [];
+    foreach (range(1, 1000000) as $value) {
+        $numeros[] = $value;
+    }
+
+    echo "Memory peak usage FOREACH: " . memory_get_peak_usage(true) . " bytes \n";
+}
+
+function generatorCall()
+{
+    foreach (range(1, 1000000) as $value) {
+        yield $value;
+    }
+}
+
+function generatorOnly()
+{
+    foreach (generatorCall() as $value) {
+        $value;
+    }
+    echo "Memory peak usage GENERATOR: " . memory_get_peak_usage(true) . " bytes \n";
+}
+
+#forEachOnly();
+#generatorOnly();
