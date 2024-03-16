@@ -10,24 +10,21 @@ O projeto será sempre feito com PHP puro e pra isso eu to usando o FrankenPHP p
 
 Tu vai precisar do docker e ai e so rodar
 
-docker compose up
+    docker compose up
 
 e depois acessar localhost
 
+ou se preferir
+
+    php -S localhost:8080 index.php
+
 # Content List
 
-Aqui vou listar os assuntos que estudei ou que quero estudar em ordem cronologica (eu não posso perder um dia)
-
-12/03/2024 - Generators (dia 1) = done
+13/03/2024 - Generators (dia 1)
     - https://dev.to/razielrodrigues/30-days-of-code-in-php-day-1-2m52
 
-13/03/2024 - Fibers (dia 2) = done
-    - 
-
-14/03/2024 - Attributes (dia 3)
-    -
-
-15/03/2024 - References (dia 4)
+14/03/2024 - Fibers pt.1 (dia 2)
+15/03/2024 - Fibers pt.2 (dia 3)
     -
 
 # TODO
