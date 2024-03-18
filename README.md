@@ -25,7 +25,10 @@ ou se preferir
 
 14/03/2024 - Fibers pt.1 (dia 2)
 15/03/2024 - Fibers pt.2 (dia 3)
-    -
+    - https://dev.to/razielrodrigues/30-days-of-code-in-php-fibers-day-2-3-12bh
+
+16/03/2024 - Attributes
+    - 
 
 # TODO
     - Criar tradução para inglês

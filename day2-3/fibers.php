@@ -4,8 +4,8 @@
 # https://openswoole.com/article/php-fibers-rfc-vs-swoole-co
 # https://php.watch/versions/8.1/fibers
 # https://www.php.net/manual/en/language.fibers.php
-# https://www.php.net/manual/en/language.fibers.php
 # https://www.youtube.com/watch?v=P7ucMvlVhGc
+# https://wiki.php.net/rfc/fibers
 
 # Testei todos os metodos da classe:
 # Fiber::__construct
