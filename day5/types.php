@@ -165,10 +165,34 @@ $ponteiro[] = 'ola';
 var_dump($array5);
 
 
+# objects
+
+class foo
+{
+    function do_foo()
+    {
+        echo "Doing foo.";
+    }
+}
+
+$bar = new foo;
+echo $bar->do_foo();
 
 
-# TIPOS NO PHP:
-# array
-# object
-# callable
-# resource
+
+# enum
+
+enum Suit
+{
+    case Hearts;
+    case Diamonds;
+    case Clubs;
+    case Spades;
+}
+
+function do_stuff(Suit $s)
+{
+    // ...
+}
+
+do_stuff(Suit::Spades);
