@@ -1,11 +1,5 @@
 <?php
 
-// Declare Attributes
-
-/*
- * Attributes are declared with `#[Attribute]`.
- */
-
 echo '<h1> Attributes: </h1> <hr>';
 
 #[Attribute]
