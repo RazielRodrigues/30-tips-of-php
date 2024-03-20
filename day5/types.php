@@ -93,7 +93,7 @@ This should print a capital 'A': \x41
 EOT;
 
 // Static variables
-function foo()
+function foo4()
 {
     static $bar = <<<LABEL
 Nothing in here...
@@ -167,7 +167,7 @@ var_dump($array5);
 
 # objects
 
-class foo
+class foo12
 {
     function do_foo()
     {
@@ -175,7 +175,7 @@ class foo
     }
 }
 
-$bar = new foo;
+$bar = new foo12;
 echo $bar->do_foo();
 
 
@@ -196,3 +196,29 @@ function do_stuff(Suit $s)
 }
 
 do_stuff(Suit::Spades);
+
+
+# Callbacks
+
+class MarchaNaBoneca {
+
+    public function marchando()
+    {
+        echo 'marchando...';
+    }
+
+
+    public static function marchandoStatic()
+    {
+        echo 'marchando...';
+    }
+}
+    function alone()
+    {
+        echo 'marchando...';
+    }
+call_user_func(['MarchaNaBoneca', 'marchandoStatic']);
+call_user_func([(new MarchaNaBoneca()), 'marchandoStatic']);
+call_user_func([(new MarchaNaBoneca()), 'marchando']);
+
+call_user_func('alone');
