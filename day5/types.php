@@ -213,12 +213,78 @@ class MarchaNaBoneca {
         echo 'marchando...';
     }
 }
-    function alone()
+    function alone() : mixed
     {
         echo 'marchando...';
+        return false or new MarchaNaBoneca();
     }
 call_user_func(['MarchaNaBoneca', 'marchandoStatic']);
 call_user_func([(new MarchaNaBoneca()), 'marchandoStatic']);
 call_user_func([(new MarchaNaBoneca()), 'marchando']);
 
 call_user_func('alone');
+
+
+# about mixed
+
+# The mixed type accepts every value. It is equivalent to the union type object|resource|array|string|float|int|bool|null. Available as of PHP 8.0.0.
+
+
+# about void
+
+# void is a return-only type declaration indicating the function does not return a value, but the function may still terminate. Therefore, it cannot be part of a union type declaration. Available as of PHP 7.1.0.
+
+# about never
+
+# never is a return-only type indicating the function does not terminate. This means that it either calls exit(), throws an exception, or is an infinite loop. Therefore, it cannot be part of a union type declaration. Available as of PHP 8.1.0.
+# never is, in type theory parlance, the bottom type. Meaning it is the subtype of every other type and can replace any other return type during inheritance.
+
+
+
+
+function neverSay():never
+{
+
+    echo 'Nobody can stop me!';
+    exit;
+}
+
+function a(): never
+{
+    throw new Exception('WTF this guy wont die?');
+}
+
+
+
+try {
+    a();
+} catch (Exception $th) {
+    echo $th->getMessage();
+}
+
+# Relative class types self ¶ parent ¶ static ¶
+
+# Value types ¶ Value types are those which not only check the type of a value but also the value itself. PHP has support for two value types: false as of PHP 8.0.0, and true as of PHP 8.2.0.
+
+# Iterables ¶ Iterable is a built-in compile time type alias for array|Traversable. From its introduction in PHP 7.1.0 and prior to PHP 8.2.0, iterable was a built-in pseudo-type that acted as the aforementioned type alias and can be used as a type declaration. An iterable type can be used in foreach and with yield from within a generator.
+
+# about declare(strict_types=1);
+
+# em arquivos que nao se usa quando 
+
+
+# Note:
+
+# Strict typing applies to function calls made from within the file with strict typing enabled, not to the functions declared within that file. If a file without strict typing enabled makes a call to a function that was defined in a file with strict typing, the caller's preference (coercive typing) will be respected, and the value will be coerced.
+
+
+function sum(int $a, int $b)
+{
+    return $a + $b;
+}
+
+var_dump(sum(1, 2));
+var_dump(sum(1.5, 2.5));
+
+
+
