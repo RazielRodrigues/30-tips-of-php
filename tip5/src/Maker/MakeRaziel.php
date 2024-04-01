@@ -1,15 +1,16 @@
 <?php
 
-namespace Symfony\Bundle\MakerBundle\Maker;
+namespace App\Maker;
 
 use Symfony\Bundle\MakerBundle\ConsoleStyle;
 use Symfony\Bundle\MakerBundle\DependencyBuilder;
 use Symfony\Bundle\MakerBundle\Generator;
 use Symfony\Bundle\MakerBundle\InputConfiguration;
+use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 
-final class MakeTwigExtension extends AbstractMaker
+final class MakeRaziel extends AbstractMaker
 {
     public static function getCommandName(): string
     {
