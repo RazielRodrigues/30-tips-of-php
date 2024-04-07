@@ -10,28 +10,28 @@ use Symfony\Bundle\MakerBundle\Maker\AbstractMaker;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 
-final class MakeRaziel extends AbstractMaker
+final class MakeNewClass extends AbstractMaker
 {
     public static function getCommandName(): string
     {
-        return 'make:raziel';
+        return 'make:newclass';
     }
 
     public static function getCommandDescription(): string
     {
-        return 'Create a new Raziel class';
+        return 'Create a new class';
     }
 
     public function configureCommand(Command $command, InputConfiguration $inputConfig): void
     {
-        $command->setHelp(file_get_contents(__DIR__ . '/MakeRaziel.txt'));
+        $command->setHelp(file_get_contents(__DIR__ . '/NewClass.txt'));
     }
 
     public function generate(InputInterface $input, ConsoleStyle $io, Generator $generator): void
     {
         $generator->generateClass(
-            'App\Maker\RazielClass',
-            __DIR__ .  '/RazielClass.tpl.php'
+            'App\Maker\NewClass',
+            __DIR__ .  '/NewClass.tpl.php'
         );
 
         $generator->writeChanges();
