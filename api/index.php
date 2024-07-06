@@ -1,5 +1,4 @@
 <?php
 
-declare(strict_types=1);
-
-require_once '../tip7/index.php';
+header('content-type: application/json');
+echo json_encode(['time' => time(), 'date' => date('d.m.Y'), 'tech' => 'Vercel']);
