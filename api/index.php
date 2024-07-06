@@ -1,3 +1,5 @@
-<?php declare(strict_types = 1);
+<?php
 
-phpinfo(INFO_ALL & ~INFO_ENVIRONMENT & ~INFO_CONFIGURATION & ~INFO_VARIABLES);
+declare(strict_types=1);
+
+require_once '../tip7/index.php';
